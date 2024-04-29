@@ -1,11 +1,10 @@
 
 ## Info
----
 Patched Version from Astra official repo [https://github.com/flipkart-incubator/Astra](https://github.com/flipkart-incubator/Astra)
 
+![alt text](https://raw.githubusercontent.com/inspectorsecurity/Astra/dev/Dashboard/static/image.png)
 
 ## Astra
----
 ![alt text](https://raw.githubusercontent.com/flipkart-incubator/Astra/dev/Dashboard/static/astra.png)
 
 REST API penetration testing is complex due to continuous changes in existing APIs and newly added APIs. Astra can be used by security engineers or developers as an integral part of their process, so they can detect and patch vulnerabilities early during development cycle. Astra can automatically detect and test login & logout (Authentication API), so it's easy for anyone to integrate this into CICD pipeline. Astra can take API collection as an input so this can also be used for testing apis in standalone mode.
@@ -24,11 +23,9 @@ REST API penetration testing is complex due to continuous changes in existing AP
 - Template Injection
 
 ## Roadmap
----
 [https://www.astra-security.info/roadmap/](https://www.astra-security.info/roadmap/)
 
 ## Requirement
----
 - Linux or MacOS
 - Python 3.7+
 - mongoDB
@@ -36,7 +33,6 @@ REST API penetration testing is complex due to continuous changes in existing AP
 - RabbitMQ
 
 ## Source Installation
----
 
 ```
 $ git clone https://github.com/inspectorsecurity/Astra
@@ -90,9 +86,9 @@ docker run --rm -d --name astra-cli --link astra-mongo:mongo astra-cli
 
 ### 4. Usage
 
-```
-# open
+Open browser:
 
+```
 http://127.0.0.1:8094
 ```
 
