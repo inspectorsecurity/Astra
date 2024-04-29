@@ -13,4 +13,3 @@ WORKDIR API/
 EXPOSE 8094
 ENTRYPOINT ["python", "./api.py"]
 CMD ["tail -f /app/logs/scan.log"]
-
