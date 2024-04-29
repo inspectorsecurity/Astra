@@ -1,14 +1,11 @@
 
-Patched Version
+## Info
+---
+Patched Version from Astra official repo [https://github.com/flipkart-incubator/Astra](https://github.com/flipkart-incubator/Astra)
 
-[![Github Release Version](https://img.shields.io/badge/release-V1.0-blue.svg)](https://github.com/flipkart-incubator/Astra)
-[![Github Release Version](https://img.shields.io/badge/python-2.7-blue.svg)](https://github.com/flipkart-incubator/Astra)
-
-[![BH 2018 USA](https://img.shields.io/badge/Black%20Hat%20Arsenal-USA%202018-blue.svg)](https://www.blackhat.com/us-18/arsenal/schedule/index.html#astra-automated-security-testing-for-rest-apis-11976)
-
-[![BH 2018 Europe](https://img.shields.io/badge/Black%20Hat%20Arsenal-Europe%202018-blue.svg)](https://www.blackhat.com/eu-18/arsenal/schedule/index.html#astra-automated-security-testing-for-rest-apis-13353)
 
 ## Astra
+---
 ![alt text](https://raw.githubusercontent.com/flipkart-incubator/Astra/dev/Dashboard/static/astra.png)
 
 REST API penetration testing is complex due to continuous changes in existing APIs and newly added APIs. Astra can be used by security engineers or developers as an integral part of their process, so they can detect and patch vulnerabilities early during development cycle. Astra can automatically detect and test login & logout (Authentication API), so it's easy for anyone to integrate this into CICD pipeline. Astra can take API collection as an input so this can also be used for testing apis in standalone mode.
@@ -27,16 +24,19 @@ REST API penetration testing is complex due to continuous changes in existing AP
 - Template Injection
 
 ## Roadmap
+---
 [https://www.astra-security.info/roadmap/](https://www.astra-security.info/roadmap/)
 
 ## Requirement
+---
 - Linux or MacOS
 - Python 3.7+
 - mongoDB
 - Celery
 - RabbitMQ
 
-## Installation
+## Source Installation
+---
 
 ```
 $ git clone https://github.com/inspectorsecurity/Astra
@@ -50,31 +50,50 @@ $ python3 api.py
 
 ```
 
-## Docker Installation
-
-### Run Mongo Container:
-
-```
-$ docker pull mongo
-$ docker run --name astra-mongo -d mongo
-```
-
-### Installing GUI Docker: 
+## Usage: Web interface
+Run the api.py and access the web interface at http://127.0.0.1:8094
 
 ```
-$ git clone https://github.com/inspectorsecurity/Astra.git
+$ cd API
+$ python api.py
+```
+
+## Docker Installation (recommended)
+
+### 0. Download source:
+
+```
+$ git clone https://github.com/inspectorsecurity/Astra
 $ cd Astra
-$ docker build -t astra .
-$ docker run --rm -it --link astra-mongo:mongo -p 8094:8094 astra
 ```
 
-### Installing CLI Docker :
+### 1. Run Mongo Container:
 
 ```
-$ git clone -b docker-cli https://github.com/inspectorsecurity/Astra.git
-$ cd Astra
-$ docker build -t astra-cli .
-$ docker run --rm -it --link astra-mongo:mongo astra-cli 
+docker pull mongo:5.0 
+docker run --name astra-mongo -d mongo:5.0
+```
+
+### 2. Run GUI Docker: 
+
+```
+docker build -t astra . 
+docker run --rm -d --name astra-web --link astra-mongo:mongo -p 8094:8094 astra
+```
+
+### 3. Run CLI Docker:
+
+```
+docker build -t astra-cli .
+docker run --rm -d --name astra-cli --link astra-mongo:mongo astra-cli
+```
+
+### 4. Usage
+
+```
+# open
+
+http://127.0.0.1:8094
 ```
 
 ## Dependencies
@@ -133,14 +152,7 @@ optional arguments:
   -d LOGINDATA, --logindata LOGINDATA
                         login data of API
 
-```
-## Usage: Web interface
-Run the api.py and access the web interface at http://127.0.0.1:8094
-```
-$ cd API
-$ python api.py
 
-```
 
 NOTE:
 On macOS 10.13+ you must use the flag `OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES` to prevent scanning processes from being killed due to the way `fork()` and `exec()` has been changed. See [here](http://www.sealiesoftware.com/blog/archive/2017/6/5/Objective-C_and_fork_in_macOS_1013.html) for more information.
