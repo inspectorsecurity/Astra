@@ -5,7 +5,7 @@ Patched Version from Astra official repo [https://github.com/flipkart-incubator/
 ![alt text](https://github.com/inspectorsecurity/Astra/blob/master/Dashboard/static/image.png)
 
 ## Astra
-![alt text](https://raw.githubusercontent.com/inspectorsecurity/Astra/dev/Dashboard/static/astra.png)
+![alt text](https://github.com/inspectorsecurity/Astra/dev/Dashboard/static/astra.png)
 
 REST API penetration testing is complex due to continuous changes in existing APIs and newly added APIs. Astra can be used by security engineers or developers as an integral part of their process, so they can detect and patch vulnerabilities early during development cycle. Astra can automatically detect and test login & logout (Authentication API), so it's easy for anyone to integrate this into CICD pipeline. Astra can take API collection as an input so this can also be used for testing apis in standalone mode.
 
