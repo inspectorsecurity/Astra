@@ -1,0 +1,10 @@
+requests
+logger
+pymongo==3.5.1
+ConfigParser
+pyjwt
+flask
+sqlmap
+reportlab
+apscheduler
+celery
